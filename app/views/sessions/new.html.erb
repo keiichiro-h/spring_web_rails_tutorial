@@ -6,6 +6,11 @@
     <%= f.label :password, "パスワード" %>
     <%= f.password_field :password %>
 
+    <%= f.label :remember_me do %>
+      <%= f.check_box :remember_me %>
+      <span>ログイン状態を保持する</span>
+    <% end %>
+
     <%= f.submit "ログイン" %>
 <% end %>
 
