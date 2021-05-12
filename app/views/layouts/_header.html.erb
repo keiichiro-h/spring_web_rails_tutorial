@@ -4,11 +4,21 @@
     <p class="logo"> Spring <p>
   </div>
   <div class="header-right">
-    <%= link_to "ホーム", root_path %>
-    <%= link_to "受講料/クラス日程", '#' %>
-    <%= link_to "よくある質問", questions_path %>
-    <%= link_to "お問い合わせ", help_path %>
-    <%= link_to "ログイン", '#' %>
+    <ul>
+    <li><%= link_to "ホーム", root_path %></li>
+    <li><%= link_to "受講料/クラス日程", '#' %></li>
+    <li><%= link_to "よくある質問", questions_path %></li>
+    <li><%= link_to "お問い合わせ", help_path %></li>
+    
+    <% if logged_in? %>
+      <li><%= link_to "ユーザー一覧", '#' %></li>
+      <li><%= link_to "マイページ", '#' %></li>
+      <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
+    <% else %>
+      <li><%= link_to "ログイン", login_path %></li>
+    <% end %>
+    
+    </ul>
   </div>
 </div>
 </header>
