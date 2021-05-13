@@ -1,1 +1,5 @@
 <h1>ようこそ<%= @user.name %>さん, <%= @user.email %></h1>
+
+<ul>
+    <li><%= link_to "ユーザー情報の編集", edit_user_path(current_user) %></li>
+</ul>
