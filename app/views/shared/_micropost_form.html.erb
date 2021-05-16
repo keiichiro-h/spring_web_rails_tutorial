@@ -1,0 +1,6 @@
+<%= form_with(model: @micropost, local: true) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  
+  <%= f.text_area :content, placeholder: "新しい投稿を編集する" %>
+  <%= f.submit "投稿する" %>
+<% end %>
