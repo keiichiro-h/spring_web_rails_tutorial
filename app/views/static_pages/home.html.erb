@@ -1,4 +1,9 @@
 
-
-<h1>Springにようこそ</h1>
-<%= link_to "さっそく、新規登録", signup_path %>
+<% if logged_in? %>
+  <%= render 'shared/micropost_form' %>
+  <h3>タイムライン</h3>
+  <%= render 'shared/feed' %>
+<% else %>
+  <h1>Springにようこそ</h1>
+  <%= link_to "さっそく、新規登録", signup_path %>
+<% end %>

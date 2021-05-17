@@ -8,6 +8,7 @@ before_action :correct_user, only: :destroy
       flash[:success] = "投稿が完了しました"
       redirect_to current_user
     else
+      @feed_items = current_user.feed  
       render 'static_pages/home'
     end
   end
